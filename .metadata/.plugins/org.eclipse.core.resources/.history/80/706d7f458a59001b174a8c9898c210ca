@@ -11,32 +11,21 @@ public class Conta {
 	
 	public void depositar(double valorDeposito) {
 		
-		if (valorDeposito < 0 ) {	
-		System.out.println("Valor inválido!!!");
+		if (valorDeposito > 0 ) {	
+		saldo += valorDeposito; 
 		} else {
-		 saldo += valorDeposito;
+			System.out.println("Valor Inválido!!!");
 		}
 		
 	}
 	
-	public void mostrarSaldoDaConta() {
+	public void mostrarSaldoDaConta () {
 		System.out.println("Saldo: " + saldo);
-		System.out.println("Saldo + limite: " + (saldo + chequeEspecial));
-	}
-	
-	public double getSaldo(){
-		return saldo; 
 	}
 	
 	public void sacar (double valorDoSaque) {
 		
-		if ((saldo + chequeEspecial) >= valorDoSaque) {
-			saldo -= valorDoSaque; 
-	
-	 } else {
-		 System.out.println("Saldo insuficiente");
-	 }
-	
+		saldo -= valorDoSaque; 
     }
 	
 	public void transferir () {
